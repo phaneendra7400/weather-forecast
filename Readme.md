@@ -17,7 +17,7 @@ We can use just the below link to see how the project UI looks.
 <a href="https://github.com/SridharSharmaRamamurthy/weather-forecast/blob/master/WebContent/index.html">Demo Link</a>
 
 # Testing
-Testing id done using TDD Approach and i have created <a href="https://github.com/SridharSharmaRamamurthy/weather-forecast/blob/master/src/src/test/WeatherTest.java">Junit_Test_Class</a>.
+Testing is done using TDD Approach and i have created <a href="https://github.com/SridharSharmaRamamurthy/weather-forecast/blob/master/src/src/test/WeatherTest.java">Junit_Test_Class</a>.
 This class validate in 3 Sceniarios 
             1) To check whether the system is having proper internet connection.
             2) To check the Status code of the application with the valid Url and invalid Url.
