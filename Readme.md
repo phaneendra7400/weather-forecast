@@ -14,7 +14,7 @@ if we convert this to jar file then using java -jar projectname.jar will start t
 # Demo 
 We can use just the below link to see how the project UI looks.
 
-<a href="https://github.com/SridharSharmaRamamurthy/weather-forecast/blob/master/WebContent/index.html">Demo Link</a>
+<a href="http://htmlpreview.github.io/?https://github.com/SridharSharmaRamamurthy/weather-forecast/blob/master/WebContent/index.html">Demo Link</a>
 
 # Testing
 Testing is done using TDD Approach and i have created <a href="https://github.com/SridharSharmaRamamurthy/weather-forecast/blob/master/src/src/test/WeatherTest.java">Junit_Test_Class</a>.
