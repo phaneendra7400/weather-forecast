@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+	type="text/javascript"></script>
+<link rel="stylesheet"
+	href="http://openweathermap.org/themes/openweathermap/assets/css/styles.306e615736ca30911eba.css" />
+<style>
+.weatherMainClass {
+	width: 50%;
+	overflow-y: scroll;
+	height: 85%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center_align {
+	text-align: center;
+}
+</style>
+<script>
+	var valid_appid = "019a736fd448ec0464f324f3f7063003";
+	var invalid_appid = "sridhar";
+	var reference_URL = "http://api.openweathermap.org/data/2.5/forecast?APPID="
+			+ valid_appid + "&units=metric&q=Bangalore,IN&mode=json";
+	$(document).ready(function() {
+		$.ajax({
+			type : "GET",
+			url : reference_URL,
+			dataType : "json",
+			success : jsonParser,
+			error : errorMethod
+		});
+	});
+	function jsonParser(json) {
+		console.log(json);
+		var open_tr = '<tr class="daily-list__today">';
+		var open_td = '<td>';
+		var close_td = '</td>';
+		var close_tr = '</tr>';
+		var final_div_content = "";
+		var i = 0;
+		var city;
+		$(json.list)
+				.each(
+						function(idx, obj) {
+							var weather_date = obj.dt_txt;
+							var temp_max = obj.main.temp_max;
+							var temp_min = obj.main.temp_min;
+							var wind_speed = obj.wind.speed;
+							var weather_clouds = obj.clouds.all;
+							var weather_grnd_level = obj.main.grnd_level
+							var weather_icon;
+							var weather_description;
+							var today_div = "";
+							$(obj.weather)
+									.each(
+											function(idx, weatherObj) {
+												weather_icon = '<img src="http://openweathermap.org/img/w/'+weatherObj.icon+'.png" />';
+												weather_description = weatherObj.description;
+											});
+							if (i == 0)
+								today_div = '<div class="daily-list__today-label">Today</div>';
+							final_div_content += open_tr;
+							final_div_content += open_td + weather_date
+									+ weather_icon + today_div + close_td;
+							final_div_content += open_td
+									+ '<span class="label label-warning">'
+									+ temp_max + '&#x2103</span>&nbsp;';
+							final_div_content += '<span class="label label-default">'
+									+ temp_min
+									+ '&#x2103</span>&nbsp;&nbsp;<i>'
+									+ weather_description + '</i>';
+							final_div_content += '<p>' + wind_speed
+									+ ' m/s</br>clouds: ' + weather_clouds
+									+ ' %, ' + weather_grnd_level + ' hpa</p>'
+							final_div_content += close_td;
+							final_div_content += close_tr;
+							//console.log("final_div_content"+final_div_content);
+							i++;
+						});
+		$(json.city).each(function(idx, obj) {
+			city = obj.name;
+		});
+		$(".weather-graphic__header")
+				.html("5 day weather forecast for " + city);
+		$("#weatherTable").html(final_div_content);
+	}
+	function errorMethod() {
+		alert("Please check there is some error in the Application");
+		$('.weatherMainClass').hide();
+		$('#error_block').html(
+				'Please check there is some error in the Application');
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>Weather forecast</title>
+</head>
+<body>
+	<div class="center_align">
+		<h3 class="weather-graphic__header"></h3>
+	</div>
+	<div id="error_block" class="center_align"></div>
+	<div class="weatherMainClass" id="">
+		<table id="weatherTable" class="table daily-list">
+		</table>
+	</div>
+</body>
+</html>
