@@ -14,20 +14,20 @@ if we convert this to jar file then using java -jar projectname.jar will start t
 # Demo 
 We can use just the below link to see how the project UI looks.
 
-<a href="http://htmlpreview.github.io/?https://github.com/SridharSharmaRamamurthy/weather-forecast/blob/master/index.html">Demo Link</a>
+<a href="https://github.com/SridharSharmaRamamurthy/weather-forecast/blob/master/WebContent/index.html">Demo Link</a>
 
 # Testing
-Just a normal Testing can be achieved in this html Page by changing the value of appid variable . so ig its not a valid appid then it will show a error message as like below.
-            Please check there is some error in the Application
-            
+Testing id done using TDD Approach and i have created <a href="https://github.com/SridharSharmaRamamurthy/weather-forecast/blob/master/src/src/test/WeatherTest.java">Junit_Test_Class</a>.
+This class validate in 3 Sceniarios 
+            1) To check whether the system is having proper internet connection.
+            2) To check the Status code of the application with the valid Url and invalid Url.
+
 # What could be done with more time
 1) Since i was running short age of time i have just used css style sheet of the openweathermap site and embedded it.
 2) i have used directly the ajax call to fetch the data in real time it wont be like that we will be using one WebServer layer (Controller) to map the things and to fetch data this can be improved of had more time.
-3) if i had created the Rest webservice then i can test webservice is running or not using Fitnesse Tool that would have been achieved.
-4) Even deployment can be made automated if i would have used jenkins and shown some demo.
+3) if had more time i would have written more test cases scenario to validate the JSON Response type and other cases.
+4) if i had created the Rest webservice then i can test webservice is running or not using Fitnesse Tool that would have been achieved.
+5) Even deployment can be made automated if i would have used jenkins and shown some demo.
 
 # Thanks for viewing my Page.
 Sridhar
-
-#Repo
-weather-forecast 
