@@ -7,6 +7,9 @@ This project will give you the weather Forecast of present day and next 4 days .
 This is a Maven Project so to build the project we require maven installed on the system/IDE and then using command maven clean install will build the application.
 if you want skip Junit Test then we should use maven clean install -skiptests=true. once you build the application you will get war file. you can configure either to get jar in pom.xml by using a tag called maven packaging tag.  
 
+#Java Doc avaiable in docs Folder
+Even i have generated the java docs for this project and it is in doc folder.
+
 # Running the Project
 Running the Project is very easy since we have got the war file you can just deploy this in tomcat and if you browse http://ip:port/index.html weather page will be rendered.
 if we convert this to jar file then using java -jar projectname.jar will start the micro services and no need of tomcat also.
