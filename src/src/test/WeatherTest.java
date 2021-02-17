@@ -1,8 +1,5 @@
 package src.test;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static com.jayway.restassured.RestAssured.given;
 
 /**
  * @author ramasrid
